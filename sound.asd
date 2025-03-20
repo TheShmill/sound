@@ -1,4 +1,5 @@
 (asdf:defsystem sound
   :author "Shmill"
   :serial t
-  :components ((:file "main")))
+  :components ((:file "package")
+               (:file "main")))

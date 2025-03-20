@@ -1,0 +1,2 @@
+(defpackage #:sound
+  (:use :cl))
