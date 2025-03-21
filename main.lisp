@@ -2,12 +2,13 @@
 
 (defparameter sample-rate 48000)
 
-(defun sine-wave (frequency duration)
+(defun sine-wave (frequency duration &key (amplitude 1))
   "Generates a list of duration * sample-rate samples for a sine wave with the specified frequency"
   (loop
-    with step = (/ (* 2 pi frequency) sample-rate)
+    with step = (/ (* 2 pi frequency)
+                   sample-rate)
     for time from 0 to (1- (* duration sample-rate))
-    for sample = (coerce (sin (* step time))
+    for sample = (coerce (* amplitude (sin (+ (* step time))))
                          'single-float)
     collecting sample))
 
